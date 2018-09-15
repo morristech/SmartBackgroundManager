@@ -1,0 +1,4 @@
+ext.versions = [
+        kotlin : '1.2.61',
+        android : [ tools_build_gradle : '3.3.0-alpha10' ],
+]

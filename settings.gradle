@@ -1,0 +1,1 @@
+include ':demo-app', ':smartbackgroundmanager', ':smartbackgroundmanager-picasso', ':smartbackgroundmanager-glide'

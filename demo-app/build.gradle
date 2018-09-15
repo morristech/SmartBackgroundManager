@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply from: 'versions.gradle'
+
+android {
+    compileSdkVersion versions.android.compileSdk
+
+    defaultConfig {
+        applicationId "uz.pentoligy.smartbackgroundmanagerdemo"
+        minSdkVersion versions.android.minSdk
+        targetSdkVersion versions.android.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation "junit:junit:$versions.junit"
+    androidTestImplementation "androidx.test:runner:$versions.androidx.testRunner"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.androidx.testEspresso"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+
+    implementation project(':smartbackgroundmanager')
+    implementation project(':smartbackgroundmanager-glide')
+    implementation project(':smartbackgroundmanager-picasso')
+
+    implementation "androidx.appcompat:appcompat:$versions.androidx.common"
+    implementation "androidx.leanback:leanback:$versions.androidx.common"
+
+    implementation "com.github.bumptech.glide:glide:$versions.bumptech.glide"
+    kapt "com.github.bumptech.glide:compiler:$versions.bumptech.glide"
+
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$versions.squareup.leakcanary"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$versions.squareup.leakcanary"
+
+    implementation "com.squareup.picasso:picasso:$versions.squareup.picasso"
+
+    implementation "io.reactivex.rxjava2:rxandroid:$versions.reactiveX.rxAndroid"
+    implementation "io.reactivex.rxjava2:rxjava:$versions.reactiveX.rxJava"
+}

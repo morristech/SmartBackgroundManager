@@ -1,0 +1,29 @@
+ext.versions = [
+        kotlin : '1.2.61',
+
+        android : [
+                compileSdk : 28,
+                minSdk : 17,
+                targetSdk : 28
+        ],
+
+        androidx : [
+                common : '1.0.0-rc02',
+                testRunner : '1.1.0-alpha4',
+                testEspresso : '3.1.0-alpha4',
+        ],
+
+        bumptech : [ glide : '4.8.0' ],
+
+        junit : '4.12',
+
+        reactiveX : [
+                rxAndroid : '2.0.1',
+                rxJava : '2.1.0',
+        ],
+
+        squareup : [
+                leakcanary : '1.6.1',
+                picasso : '2.71828'
+        ]
+]
